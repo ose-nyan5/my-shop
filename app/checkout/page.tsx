@@ -27,8 +27,8 @@ export default async function CheckoutPage({
         quantity: quantity,
       },
     ],
-    success_url: "http://localhost:3000/success",
-    cancel_url: "http://localhost:3000/cart",
+    success_url: "http://my-shop-gamma-sepia.vercel.app/success",
+    cancel_url: "http://my-shop-gamma-sepia.vercel.app/cart",
   })
 
   redirect(session.url!)

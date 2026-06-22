@@ -62,7 +62,7 @@ if (loading) {
           
           <a href="/">
            <Image
-            src="/newwlogo.png"
+            src="/newwwlogo.png"
             alt="FMD Logo"
             fill
             priority
