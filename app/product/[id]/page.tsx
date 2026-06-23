@@ -112,7 +112,6 @@ export default function ProductPage() {
 
         <p className="text-gray-400 mt-6 leading-7">
           FUORI MA DENTRO original tee.
-          Heavy weight body with slime graphic.
         </p>
 
         <button
