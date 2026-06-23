@@ -81,12 +81,12 @@ if (loading) {
               key={product.id}
               className="bg-white text-black overflow-hidden shadow-2xl hover:-translate-y-2 duration-300"
             >
-              <div className="relative aspect-square bg-white">
+              <div className="relative h-[500px] bg-white">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-6 hover:scale-105 duration-300"
+                  className="object-contain p-2 hover:scale-105 duration-300"
                 />
               </div>
 
