@@ -11,7 +11,7 @@ const products = [
     id: 1,
     name: "Slatt tee",
     price: "¥6,600",
-    image: "/tee.png",
+    image: "/newwtee.png",
   },
 ]
 
@@ -62,7 +62,7 @@ if (loading) {
           
           <a href="/">
            <Image
-            src="/newwwlogo.png"
+            src="/newwwwwlogo.png"
             alt="FMD Logo"
             fill
             priority

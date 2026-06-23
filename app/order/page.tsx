@@ -5,6 +5,7 @@ import Image from "next/image"
 export default function OrderPage() {
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] =useState("M")
+  const [color, setColor] = useState("Black")
 
   useEffect(() => {
     const savedQuantity = localStorage.getItem("cartQuantity")
@@ -17,6 +18,12 @@ export default function OrderPage() {
 
     if (savedSize) {
       setSize(savedSize)
+    }
+
+    const savedColor = localStorage.getItem("cartColor")
+
+    if (savedColor) {
+      setColor(savedColor)
     }
   }, [])
 
@@ -51,7 +58,7 @@ export default function OrderPage() {
 
             <div className="relative w-16 h-16 bg-gray-100 rounded-lg overflow-hidden">
               <Image
-                src="/tee.png"
+                src={color === "Black" ? "/newwtee.png" : "/newwhitetee.png"}
                 alt="Slatt tee"
                 fill
                 className="object-contain p-1"
@@ -65,6 +72,10 @@ export default function OrderPage() {
 
               <p className="text-sm text-gray-500">
                 Size {size}
+              </p>
+
+              <p className="text-sm text-gray-500">
+                Color {color}
               </p>
             </div>
 
@@ -104,11 +115,12 @@ export default function OrderPage() {
         type="button"
         onClick={() => {
           const savedSize = localStorage.getItem("cartSize") || size
+          const savedColor = localStorage.getItem("cartColor") || color
           const savedQuantity =
             localStorage.getItem("cartQuantity") || String(quantity)
 
           window.location.href =
-            `/checkout?size=${savedSize}&quantity=${savedQuantity}`
+            `/checkout?size=${savedSize}&color=${savedColor}&quantity=${savedQuantity}`
         }}
         className="block w-full bg-white text-black py-5 rounded-2xl text-xl font-black mt-8 text-center hover:opacity-80 duration-300"
       >

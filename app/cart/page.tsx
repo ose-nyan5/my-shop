@@ -7,6 +7,7 @@ export default function CartPage() {
   const [quantity, setQuantity] = useState(1)
   const [showItem, setShowItem] = useState(false)
   const [size, setSize] = useState("M")
+  const [color, setColor] = useState("Black")
 
 useEffect(() => {
   const params = new URLSearchParams(window.location.search)
@@ -17,13 +18,19 @@ useEffect(() => {
     setSize(savedSize)
   }
 
+  const savedColor = localStorage.getItem("cartColor")
+
+  if (savedColor) {
+    setColor(savedColor)
+  }
+
   if (params.get("add") === "1") {
     localStorage.setItem(
       "cartItem",
       JSON.stringify({
         name: "Slatt tee",
         price: 6600,
-        image: "/tee.png",
+        image: "/newwtee.png",
         size: "M",
         quantity: 1,
       })
@@ -58,7 +65,7 @@ useEffect(() => {
           <div className="bg-white text-black rounded-2xl p-5 flex gap-5 shadow-2xl">
             <div className="relative w-32 h-32 bg-gray-100 rounded-xl overflow-hidden">
               <Image
-                src="/tee.png"
+                src={color === "Black" ? "/nnwwtee.png" : "/newwhitetee.png"}
                 alt="Slatt tee"
                 fill
                 className="object-contain p-2"
@@ -69,6 +76,7 @@ useEffect(() => {
               <div>
                 <h2 className="text-2xl font-black">Slatt tee</h2>
                 <p className="text-gray-500 mt-2">Size {size}</p>
+                <p className="text-gray-500">Color {color}</p>
               </div>
 
               <div className="flex items-center justify-between mt-6">

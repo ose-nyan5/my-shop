@@ -6,6 +6,7 @@ import Link from "next/link"
 
 export default function ProductPage() {
   const [size, setSize] = useState("M")
+  const [color, setColor] = useState("Black")
 
   return (
     <main className="min-h-screen bg-black text-white px-6 py-10">
@@ -16,11 +17,25 @@ export default function ProductPage() {
 
       <div className="mt-8">
         <Image
-          src="/tee.png"
+          src={color === "Black" ? "/newwtee.png" : "/newwhitetee.png"}
           alt="Slatt tee"
           width={600}
           height={600}
           className="w-full object-cover"
+        />
+      </div>
+
+      <div className="mt-10">
+        <h3 className="text-xl font-bold mb-4">
+          SIZE GUIDE
+        </h3>
+
+        <Image
+          src={color === "Black" ? "/sizeguide-black.jpg" : "/sizeguide-white.jpg"}
+          alt="Size Guide"
+          width={1200}
+          height={800}
+          className="w-full rounded-xl"
         />
       </div>
 
@@ -37,6 +52,36 @@ export default function ProductPage() {
           <p className="text-gray-400 mb-3">
             SIZE
           </p>
+
+         <div className="mt-6">
+           <p className="text-gray-400 mb-3">COLOR</p>
+
+           <div className="flex gap-3">
+             <button
+               type="button"
+               onClick={() => setColor("Black")}
+               className={`px-5 py-3 border ${
+                 color === "Black"
+                   ? "bg-white text-black"
+                   : "border-gray-600 text-white"
+               }`}
+             >
+               Black
+             </button>
+
+             <button
+               type="button"
+               onClick={() => setColor("White")}
+               className={`px-5 py-3 border ${
+                 color === "White"
+                   ? "bg-white text-black"
+                   : "border-gray-600 text-white"
+               }`}
+             >
+               White
+             </button>
+           </div>
+         </div>
 
           <div className="flex gap-3">
             <button
@@ -74,6 +119,8 @@ export default function ProductPage() {
           type="button"
           onClick={() => {
             localStorage.setItem("cartSize", size)
+            localStorage.setItem("cartColor", color)
+            localStorage.setItem("cartQuantity", "1")
             window.location.href = "/cart?add=1"
           }}
           className="w-full bg-white text-black py-4 mt-10 font-bold text-lg hover:opacity-80 duration-300"
