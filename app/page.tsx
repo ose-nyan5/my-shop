@@ -129,8 +129,15 @@ if (loading) {
         </div>
       </section>
 
-      <footer className="text-center text-white/70 text-sm pb-10">
-        © FMD All Rights Reserved.
+      <footer className="text-center text-white/70 text-sm pb-10 space-y-3">
+        <p>© FMD All Rights Reserved.</p>
+
+        <a
+          href="/legal"
+          className="block text-gray-500 hover:text-white duration-300"
+        >
+          特定商取引法に基づく表記
+        </a>
       </footer>
     
     {menuOpen && (
