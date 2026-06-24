@@ -28,8 +28,8 @@ export default function LegalPage() {
         </div>
 
         <div>
-          <h2 className="font-bold mb-2">fuorimaidentroofficial@gmail.com</h2>
-          <p>後で入力</p>
+          <h2 className="font-bold mb-2">メールアドレス</h2>
+          <p>fuorimaidentroofficial@gmail.com</p>
         </div>
 
         <div>
