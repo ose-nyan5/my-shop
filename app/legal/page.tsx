@@ -1,7 +1,15 @@
 export default function LegalPage() {
   return (
     <main className="min-h-screen bg-black text-white px-8 py-20">
-      <h1 className="text-4xl font-black mb-10">
+
+      <a
+        href="/"
+        className="text-gray-400 text-sm hover:text-white duration-300"
+      >
+        ← BACK
+      </a>
+
+      <h1 className="text-4xl font-black mb-10 mt-8">
         特定商取引法に基づく表記
       </h1>
 
