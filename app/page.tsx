@@ -138,6 +138,13 @@ if (loading) {
         >
           特定商取引法に基づく表記
         </a>
+
+        <a
+          href="/privacy"
+          className="block text-gray-500 hover:text-white duration-300"
+        >
+          プライバシーポリシー
+        </a>
       </footer>
     
     {menuOpen && (
