@@ -10,8 +10,14 @@ const products = [
   {
     id: 1,
     name: "Slatt tee",
+    images: [
+      "/newwtee.png",
+      "/black-look1.jpg",
+      "/black-look2.jpg",
+      "/black-look3.jpg",
+
+    ],
     price: "¥6,600",
-    image: "/newwtee.png",
   },
 ]
 
@@ -83,7 +89,7 @@ if (loading) {
             >
               <div className="relative aspect-square bg-white">
                 <Image
-                  src={product.image}
+                  src={product.images[0]}
                   alt={product.name}
                   fill
                   className="object-contain p-1 hover:scale-105 duration-300"

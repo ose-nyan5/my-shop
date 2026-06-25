@@ -7,6 +7,7 @@ import Link from "next/link"
 export default function ProductPage() {
   const [size, setSize] = useState("M")
   const [color, setColor] = useState("Black")
+  const [currentImage, setCurrentImage] = useState(0)
 
   return (
     <main className="min-h-screen bg-black text-white px-6 py-10">
@@ -17,13 +18,50 @@ export default function ProductPage() {
 
       <div className="mt-8">
         <Image
-          src={color === "Black" ? "/newwtee.png" : "/newwhitetee.png"}
+          src={
+            color === "Black"
+              ? ["/newwtee.png", "/black-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"][currentImage]
+              : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"][currentImage]
+          }
           alt="Slatt tee"
           width={600}
           height={600}
           className="w-full object-cover"
         />
       </div>
+
+      <div className="flex gap-2 mt-4 overflow-x-auto">
+        {(
+          color === "Black"
+            ? [
+                "/newwtee.png",
+                "/black-look1.jpg",
+                "/black-look2.jpg",
+                "/black-look3.jpg",
+              ]
+            : [
+                "/newwhitetee.png",
+                "/white-look1.jpg",
+                "/white-look2.jpg",
+                "/white-look3.jpg",
+                "/white-look4.jpg",
+              ]
+        ).map((img, index) => (
+            <button
+              key={img}
+              type="button"
+              onClick={() => setCurrentImage(index)}
+              className="relative w-20 h-20 flex-shrink-0 border border-white/30"
+            >
+              <Image
+                src={img}
+                alt="Slatt tee"
+                fill
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
 
       <div className="mt-10">
         <h3 className="text-xl font-bold mb-4">
@@ -59,7 +97,10 @@ export default function ProductPage() {
            <div className="flex gap-3">
              <button
                type="button"
-               onClick={() => setColor("Black")}
+               onClick={() => {
+                 setColor("Black");
+                 setCurrentImage(0);
+               }}
                className={`px-5 py-3 border ${
                  color === "Black"
                    ? "bg-white text-black"
@@ -71,7 +112,10 @@ export default function ProductPage() {
 
              <button
                type="button"
-               onClick={() => setColor("White")}
+               onClick={() => {
+                 setColor("White");
+                 setCurrentImage(0);
+               }}
                className={`px-5 py-3 border ${
                  color === "White"
                    ? "bg-white text-black"
