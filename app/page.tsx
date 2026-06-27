@@ -12,7 +12,7 @@ const products = [
     name: "Slatt tee",
     images: [
       "/newwtee.png",
-      "/black-look1.jpg",
+      "/newblack-look1.jpg",
       "/black-look2.jpg",
       "/black-look3.jpg",
 
