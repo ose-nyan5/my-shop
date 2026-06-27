@@ -20,7 +20,7 @@ export default function ProductPage() {
         <Image
           src={
             color === "Black"
-              ? ["/newwtee.png", "/black-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"][currentImage]
+              ? ["/newwtee.png", "/newblack-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"][currentImage]
               : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"][currentImage]
           }
           alt="Slatt tee"
@@ -35,7 +35,7 @@ export default function ProductPage() {
           color === "Black"
             ? [
                 "/newwtee.png",
-                "/black-look1.jpg",
+                "/newblack-look1.jpg",
                 "/black-look2.jpg",
                 "/black-look3.jpg",
               ]
