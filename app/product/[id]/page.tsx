@@ -8,6 +8,12 @@ export default function ProductPage() {
   const [size, setSize] = useState("M")
   const [color, setColor] = useState("Black")
   const [currentImage, setCurrentImage] = useState(0)
+  const [touchStart, setTouchStart] = useState(0)
+
+  const images =
+    color === "Black"
+      ? ["/newwtee.png", "/black-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"]
+      : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"]
 
   return (
     <main className="min-h-screen bg-black text-white px-6 py-10">
@@ -16,13 +22,28 @@ export default function ProductPage() {
         ← BACK
       </Link>
 
-      <div className="mt-8">
-        <Image
-          src={
-            color === "Black"
-              ? ["/newwtee.png", "/newblack-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"][currentImage]
-              : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"][currentImage]
+      <div
+        className="mt-8"
+        onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+        onTouchEnd={(e) => {
+          const touchEnd = e.changedTouches[0].clientX
+          const diff = touchStart - touchEnd
+
+          if (diff > 50) {
+            setCurrentImage((prev) =>
+              prev === images.length - 1 ? 0 : prev + 1
+            )
           }
+
+          if (diff < -50) {
+            setCurrentImage((prev) =>
+              prev === 0 ? images.length - 1 : prev - 1
+            )
+          }
+        }}
+      >
+        <Image
+          src={images[currentImage]}
           alt="Slatt tee"
           width={600}
           height={600}
@@ -31,22 +52,7 @@ export default function ProductPage() {
       </div>
 
       <div className="flex gap-2 mt-4 overflow-x-auto">
-        {(
-          color === "Black"
-            ? [
-                "/newwtee.png",
-                "/newblack-look1.jpg",
-                "/black-look2.jpg",
-                "/black-look3.jpg",
-              ]
-            : [
-                "/newwhitetee.png",
-                "/white-look1.jpg",
-                "/white-look2.jpg",
-                "/white-look3.jpg",
-                "/white-look4.jpg",
-              ]
-        ).map((img, index) => (
+        {images.map((img, index) => (
             <button
               key={img}
               type="button"
