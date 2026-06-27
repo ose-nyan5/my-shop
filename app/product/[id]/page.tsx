@@ -12,7 +12,7 @@ export default function ProductPage() {
 
   const images =
     color === "Black"
-      ? ["/newwtee.png", "/black-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"]
+      ? ["/newwtee.png", "/newwblack-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"]
       : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"]
 
   return (
