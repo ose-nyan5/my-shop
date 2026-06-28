@@ -60,6 +60,8 @@ if (loading) {
 
         <div className="absolute inset-0 bg-black/40" />
 
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black" />
+
         <header className="absolute top-0 left-0 z-20 w-full flex justify-between items-center px-6 py-6">
           <button onClick={() => setMenuOpen(true)}>
             <Menu size={40} />
