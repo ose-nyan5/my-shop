@@ -47,7 +47,7 @@ if (loading) {
     <main className="min-h-screen bg-black text-white overflow-hidden animate-fade-In">
       <div className="fixed inset-0 -z-10 bg-black" />
 
-      <section className="relative w-full h-[75vh] overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden">
         <video
           autoPlay
           muted
@@ -60,8 +60,18 @@ if (loading) {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <h1 className="text-4xl font-black tracking-[0.25em]">
+        <header className="absolute top-0 left-0 z-20 w-full flex justify-between items-center px-6 py-6">
+          <button onClick={() => setMenuOpen(true)}>
+            <Menu size={40} />
+          </button>
+
+          <a href="/cart">
+            <ShoppingCart size={40} />
+          </a>
+        </header>
+
+        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-[0.35em] text-white">
             FUORI MAI DENTRO
           </h1>
 
@@ -72,23 +82,7 @@ if (loading) {
             SHOP NOW
           </a>
         </div>
-     </section>
-
-<header className="flex justify-between items-center">
-
-  <button onClick={() => setMenuOpen(true)}>
-    <Menu size={36} />
-  </button>
-
-  <h1 className="text-3xl font-black">
-    FUORI MAI DENTRO
-  </h1>
-
-  <Link href="/cart">
-    <ShoppingCart size={36} />
-  </Link>
-
-</header>
+      </section>
 
       <section className="flex justify-center pt-36 pb-20">
         <div className="relative w-[420px] h-[320px]">
