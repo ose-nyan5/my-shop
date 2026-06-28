@@ -102,7 +102,7 @@ if (loading) {
         </div>
       </section>
 
-      <section id="shop" className="px-8 pb-24">
+      <section id="shop" className="px-8 pb-24 animate-fade-up">
         <div className="grid grid-cols-2 gap-6">
           {products.map((product) => (
             <Link
