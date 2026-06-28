@@ -12,7 +12,7 @@ const products = [
     name: "Slatt tee",
     images: [
       "/newwtee.png",
-      "/newblack-look1.jpg",
+      "/newwblack-look1.jpg",
       "/black-look2.jpg",
       "/black-look3.jpg",
 
@@ -47,6 +47,33 @@ if (loading) {
     <main className="min-h-screen bg-black text-white overflow-hidden animate-fade-In">
       <div className="fixed inset-0 -z-10 bg-black" />
 
+      <section className="relative w-full h-[75vh] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-4xl font-black tracking-[0.25em]">
+            FUORI MAI DENTRO
+          </h1>
+
+          <a
+            href="#shop"
+            className="mt-8 border border-white px-8 py-4 text-sm tracking-widest hover:bg-white hover:text-black duration-300"
+          >
+            SHOP NOW
+          </a>
+        </div>
+     </section>
+
 <header className="flex justify-between items-center">
 
   <button onClick={() => setMenuOpen(true)}>
@@ -79,7 +106,7 @@ if (loading) {
         </div>
       </section>
 
-      <section className="px-8 pb-24">
+      <section id="shop" className="px-8 pb-24">
         <div className="grid grid-cols-2 gap-6">
           {products.map((product) => (
             <Link
