@@ -6,18 +6,30 @@ import Image from "next/image"
 import Link from "next/link"
 import { Menu, ShoppingCart } from "lucide-react"
 
+
 const products = [
   {
-    id: 1,
-    name: "Slatt tee",
+    id: "black",
+    name: "Slatt tee - Black",
+    price: "¥6,600",
     images: [
       "/newwtee.png",
       "/newwblack-look1.jpg",
       "/black-look2.jpg",
       "/black-look3.jpg",
-
     ],
+  },
+  {
+    id: "white",
+    name: "Slatt tee - White",
     price: "¥6,600",
+    images: [
+      "/newwhitetee.png",
+      "/white-look1.jpg",
+      "/white-look2.jpg",
+      "/white-look3.jpg",
+      "/white-look4.jpg",
+    ],
   },
 ]
 

@@ -1,19 +1,43 @@
 "use client"
 
 import { useState } from "react"
+import { useParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function ProductPage() {
   const [size, setSize] = useState("M")
-  const [color, setColor] = useState("Black")
   const [currentImage, setCurrentImage] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
+  
+  const params = useParams()
+  const id = params.id
 
-  const images =
-    color === "Black"
-      ? ["/newwtee.png", "/newwblack-look1.jpg", "/black-look2.jpg", "/black-look3.jpg"]
-      : ["/newwhitetee.png", "/white-look1.jpg", "/white-look2.jpg", "/white-look3.jpg", "/white-look4.jpg"]
+  const product =
+    id === "white"
+      ? {
+          name: "Slatt tee - White",
+          color: "White",
+          images: [
+            "/newwhitetee.png",
+            "/white-look1.jpg",
+            "/white-look2.jpg",
+            "/white-look3.jpg",
+            "/white-look4.jpg",
+          ],
+        }
+      : {
+          name: "Slatt tee - Black",
+          color: "Black",
+          images: [
+            "/newwtee.png",
+            "/newwblack-look1.jpg",
+            "/black-look2.jpg",
+            "/black-look3.jpg",
+          ],
+        }
+  
+  const images = product.images
 
   return (
     <main className="min-h-screen bg-black text-white px-6 py-10">
@@ -75,7 +99,7 @@ export default function ProductPage() {
         </h3>
 
         <Image
-          src={color === "Black" ? "/sizeguide-black.jpg" : "/sizeguide-white.jpg"}
+          src={product.color === "Black" ? "/sizeguide-black.jpg" : "/sizeguide-white.jpg"}
           alt="Size Guide"
           width={1200}
           height={800}
@@ -97,43 +121,19 @@ export default function ProductPage() {
             SIZE
           </p>
 
-         <div className="mt-6">
-           <p className="text-gray-400 mb-3">COLOR</p>
-
-           <div className="flex gap-3">
-             <button
-               type="button"
-               onClick={() => {
-                 setColor("Black");
-                 setCurrentImage(0);
-               }}
-               className={`px-5 py-3 border ${
-                 color === "Black"
-                   ? "bg-white text-black"
-                   : "border-gray-600 text-white"
-               }`}
-             >
-               Black
-             </button>
-
-             <button
-               type="button"
-               onClick={() => {
-                 setColor("White");
-                 setCurrentImage(0);
-               }}
-               className={`px-5 py-3 border ${
-                 color === "White"
-                   ? "bg-white text-black"
-                   : "border-gray-600 text-white"
-               }`}
-             >
-               White
-             </button>
-           </div>
-         </div>
-
           <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => setSize("XS")}
+              className={`w-14 h-14 border ${
+                size === "XS"
+                  ? "bg-white text-black"
+                  : "border-gray-600 text-white"
+              }`}
+            >
+              XS
+            </button>
+            
             <button
               type="button"
               onClick={() => setSize("S")}
@@ -168,7 +168,7 @@ export default function ProductPage() {
           type="button"
           onClick={() => {
             localStorage.setItem("cartSize", size)
-            localStorage.setItem("cartColor", color)
+            localStorage.setItem("cartColor", product.color)
             localStorage.setItem("cartQuantity", "1")
             window.location.href = "/cart?add=1"
           }}
