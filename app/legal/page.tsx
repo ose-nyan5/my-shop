@@ -27,12 +27,18 @@ export default function LegalPage() {
 
         <div>
           <h2 className="font-bold mb-2">所在地</h2>
-          <p>請求があった場合遅滞なく開示します</p>
+          <p>
+            〒251-0032<br />
+            神奈川県藤沢市片瀬2丁目5‐5
+          </p>
         </div>
 
         <div>
           <h2 className="font-bold mb-2">電話番号</h2>
-          <p>請求があった場合遅滞なく開示します</p>
+          <p>
+            080-4735-1675<br />
+            受付時間：10:00〜17:00
+          </p>
         </div>
 
         <div>
@@ -42,33 +48,48 @@ export default function LegalPage() {
 
         <div>
           <h2 className="font-bold mb-2">販売価格</h2>
-          <p>各商品ページに記載</p>
+          <p>各商品ページに税込価格を表示しています。</p>
         </div>
 
         <div>
           <h2 className="font-bold mb-2">商品代金以外の必要料金</h2>
-          <p>送料・各種決済手数料</p>
+          <p>
+            送料：各商品ページまたは購入手続き画面に表示します。<br />
+            その他、お客様が選択した決済方法により所定の手数料が発生する場合があります。
+          </p>
         </div>
 
         <div>
           <h2 className="font-bold mb-2">支払方法</h2>
           <p>
-            クレジットカード決済、
-            コンビニ決済、
-            その他Stripe対応決済
+            クレジットカード決済、Apple Pay、コンビニ決済、
+            PayPayその他Stripe Checkout上で利用可能な決済方法。
+          </p>
+        </div>
+
+        <div>
+          <h2 className="font-bold mb-2">お支払いの時期</h2>
+          <p>
+            クレジットカード・Apple Pay・PayPay等：ご注文時にお支払いが確定します。<br />
+            コンビニ決済：ご注文後、Stripeの決済画面に表示される支払期限までにお支払いください。
           </p>
         </div>
 
         <div>
           <h2 className="font-bold mb-2">商品の引渡時期</h2>
-          <p>ご注文後7日以内に発送</p>
+          <p>
+            受注生産のため、ご注文およびお支払い確認後に製作を開始します。
+            発送時期は各商品ページに記載します。
+          </p>
         </div>
 
         <div>
           <h2 className="font-bold mb-2">返品・交換について</h2>
           <p>
-            商品に欠陥がある場合を除き、
-            返品・交換には応じません。
+            商品に不良・破損・誤配送がある場合は、商品到着後7日以内に
+            メールにてご連絡ください。確認後、返品または交換にて対応します。
+            <br /><br />
+            お客様都合による返品・交換はお受けしておりません。
           </p>
         </div>
 

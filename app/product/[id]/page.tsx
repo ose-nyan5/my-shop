@@ -9,7 +9,7 @@ export default function ProductPage() {
   const [size, setSize] = useState("M")
   const [currentImage, setCurrentImage] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
-  
+
   const params = useParams()
   const id = params.id
 
@@ -172,7 +172,7 @@ export default function ProductPage() {
             localStorage.setItem("cartQuantity", "1")
             window.location.href = "/cart?add=1"
           }}
-          className="w-full bg-white text-black py-4 mt-10 font-bold text-lg hover:opacity-80 duration-300"
+          className="w-full py-4 mt-10 font-bold text-lg duration-300 bg-white text-black hover:opacity-80"
         >
           ADD TO CART
         </button>
