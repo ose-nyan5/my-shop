@@ -18,7 +18,6 @@ export default async function CheckoutPage({
   const color = params.color || "Black"
   const quantity = Number(params.quantity || 1)
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
     mode: "payment",
     line_items: [
       {
