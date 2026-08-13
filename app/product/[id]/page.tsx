@@ -30,7 +30,7 @@ export default function ProductPage() {
           name: "Slatt tee - Black",
           color: "Black",
           images: [
-            "/newwtee.png",
+            "/newwwwwblacktee.png",
             "/newwblack-look1.jpg",
             "/black-look2.jpg",
             "/black-look3.jpg",

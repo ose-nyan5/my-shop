@@ -21,7 +21,7 @@ export default function ProductPage() {
 
       <div className="bg-white mt-10 p-6 relative z-0 pointer-events-none">
         <Image
-          src="/newwtee.png"
+          src="/newwww.jpg"
           alt="Slatt tee"
           width={600}
           height={600}

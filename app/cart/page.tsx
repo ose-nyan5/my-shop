@@ -30,7 +30,7 @@ useEffect(() => {
       JSON.stringify({
         name: "Slatt tee",
         price: 6600,
-        image: "/newwtee.png",
+        image: "/newwwwwblacktee.png",
         size: "M",
         quantity: 1,
       })
@@ -65,7 +65,7 @@ useEffect(() => {
           <div className="bg-white text-black rounded-2xl p-5 flex gap-5 shadow-2xl">
             <div className="relative w-32 h-32 bg-gray-100 rounded-xl overflow-hidden">
               <Image
-                src={color === "Black" ? "/nnwwtee.png" : "/newwhitetee.png"}
+                src={color === "Black" ? "/newwwwwblacktee.png" : "/newwhitetee.png"}
                 alt="Slatt tee"
                 fill
                 className="object-contain p-2"
