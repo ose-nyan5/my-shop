@@ -162,6 +162,13 @@ export default function ProductPage() {
 
         <p className="text-gray-400 mt-6 leading-7">
           FUORI MA DENTRO original tee.
+          <br />
+          ※平置き採寸となります。1〜2cmほどの誤差が生じる場合がございます。予めご了承ください。
+          <br />
+          ※お支払い確定後5日後以内に発送致します。
+          （予約販売の場合は発送開始日から5日後以内となります。）
+          <br />
+          ※購入後のサイズ変更、返品交換は承りません。ご了承ください。
         </p>
 
         <button
