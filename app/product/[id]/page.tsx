@@ -161,7 +161,7 @@ export default function ProductPage() {
         </div>
 
         <p className="text-gray-400 mt-6 leading-7">
-          FUORI MA DENTRO original tee.
+          FUORI MAI DENTRO original tee.
           <br />
           ※平置き採寸となります。1〜2cmほどの誤差が生じる場合がございます。予めご了承ください。
           <br />
