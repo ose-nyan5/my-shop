@@ -36,7 +36,7 @@ export default function LegalPage() {
         <div>
           <h2 className="font-bold mb-2">電話番号</h2>
           <p>
-            080-4735-1675<br />
+            045-453-0635<br />
             受付時間：10:00〜17:00
           </p>
         </div>
