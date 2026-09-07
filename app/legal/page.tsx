@@ -37,7 +37,8 @@ export default function LegalPage() {
           <h2 className="font-bold mb-2">電話番号</h2>
           <p>
             045-453-0635<br />
-            受付時間：10:00〜17:00
+            受付時間：平日 10:00〜17:00
+            土日祝 10:00〜17:00
           </p>
         </div>
 
