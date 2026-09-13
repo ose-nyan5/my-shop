@@ -17,7 +17,7 @@ export default function LegalPage() {
 
         <div>
           <h2 className="font-bold mb-2">販売業者</h2>
-          <p>FUORI MAI DENTRO</p>
+          <p>大沼 珀琥(FUORI MAI DENTRO)</p>
         </div>
 
         <div>
