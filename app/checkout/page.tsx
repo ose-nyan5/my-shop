@@ -28,6 +28,7 @@ export default async function CheckoutPage({
     payment_method_types: [
       "card",
       "paypay" as any,
+      "konbini",
       "customer_balance",
     ],
 
