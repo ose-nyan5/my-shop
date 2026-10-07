@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function ProductPage() {
-  const [size, setSize] = useState("M")
+  const [size, setSize] = useState("XS")
   const [currentImage, setCurrentImage] = useState(0)
   const [touchStart, setTouchStart] = useState(0)
 
@@ -148,14 +148,13 @@ export default function ProductPage() {
 
             <button
               type="button"
-              onClick={() => setSize("M")}
-              className={`w-14 h-14 border ${
-                size === "M"
-                  ? "bg-white text-black"
-                  : "border-gray-600"
-              }`}
+              disabled
+              className="relative w-14 h-14 border border-gray-700 text-gray-600 cursor-not-allowed"
             >
               M
+              <span className="absolute left-1/2 -translate-x-1/2 -bottom-5 text-[9px] whitespace-nowrap text-gray-500">
+                SOLD OUT
+              </span>
             </button>
           </div>
         </div>
