@@ -33,6 +33,12 @@ export default async function CheckoutPage({
     ],
 
     payment_method_options: {
+      card: {
+        installments: {
+          enabled: true,
+        },
+      },
+
       customer_balance: {
         funding_type: "bank_transfer",
         bank_transfer: {
